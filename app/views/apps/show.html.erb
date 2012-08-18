@@ -1,5 +1,8 @@
-<h1>Success! Now embed the code below onto your page</h1>
-<p>
-  <%= html_escape('<script type="text/javascript" src="http://morning-spire-1524.herokuapp.com/phone_texter?id=') %><%= @app.id%><%= html_escape('"></script>') %>
-</p>
+<div class="center hero-unit">
+	<h1>Now embed this code</h1>
+	<p>
+  <% code = '<script type="text/javascript" src="http://morning-spire-1524.herokuapp.com/phone_texter?id=' + @app.id.to_s + '"></script>' %>
 
+	<%= html_escape(code) %>
+</p>
+</div>

@@ -3,9 +3,6 @@ class StaticPagesController < ApplicationController
     @app = App.new
   end
   
-  def download
-  end
-  
   def demo
   end
 end
