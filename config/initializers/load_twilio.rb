@@ -1,0 +1,1 @@
+TWILIO = YAML.load_file("config/twilio.yml")[Rails.env]

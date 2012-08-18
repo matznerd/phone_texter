@@ -1,0 +1,11 @@
+development:
+  account_sid: AC9c5237acf6f9474baff618edcc116939
+  auth_token: 4df100fdd46e751efaa798f4640a76c6
+  
+test:
+  account_sid: AC9c5237acf6f9474baff618edcc116939
+  auth_token: 4df100fdd46e751efaa798f4640a76c6
+
+production:
+  account_sid: AC9c5237acf6f9474baff618edcc116939
+  auth_token: 4df100fdd46e751efaa798f4640a76c6
