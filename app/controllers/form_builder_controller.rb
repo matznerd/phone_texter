@@ -1,6 +1,6 @@
 class FormBuilderController < ApplicationController
   def build
-    @url = params[:url]
+    @id = params[:id]
     render 'phone_texter.js'
   end
 end

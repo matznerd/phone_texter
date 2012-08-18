@@ -1,0 +1,31 @@
+
+<p>
+  <b>Name:</b>
+  <%= @app.name %>
+</p>
+
+<p>
+  <b>Ios url:</b>
+  <%= @app.ios_url %>
+</p>
+
+<p>
+  <b>Android url:</b>
+  <%= @app.android_url %>
+</p>
+
+<p>
+  <b>Blackberry url:</b>
+  <%= @app.blackberry_url %>
+</p>
+
+<p>
+  <b>Other url:</b>
+  <%= @app.other_url %>
+</p>
+
+<p>
+  <b>Embed code:</b>
+  <%= html_escape('<script type="text/javascript" src="http://morning-spire-1524.herokuapp.com/phone_texter?id=') %><%= @app.id%><%= html_escape('"></script>') %>
+</p>
+

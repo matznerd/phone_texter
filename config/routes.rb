@@ -1,11 +1,15 @@
 PhoneTexter::Application.routes.draw do
-  resources :apps
+  resources :apps do
+    member do
+      get 'download'
+    end
+  end
 
   match 'sms' => 'sms#send_sms'
   match 'phone_texter' => 'form_builder#build'
   match 'demo' => 'static_pages#demo'
   
-  root :to => 'static_pages#home'
+  root :to => 'apps#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

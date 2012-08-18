@@ -1,30 +1,5 @@
-<p id="notice"><%= notice %></p>
-
+<h1>Success! Now embed the code below onto your page</h1>
 <p>
-  <b>Name:</b>
-  <%= @app.name %>
+  <%= html_escape('<script type="text/javascript" src="http://morning-spire-1524.herokuapp.com/phone_texter?id=') %><%= @app.id%><%= html_escape('"></script>') %>
 </p>
 
-<p>
-  <b>Ios url:</b>
-  <%= @app.ios_url %>
-</p>
-
-<p>
-  <b>Android url:</b>
-  <%= @app.android_url %>
-</p>
-
-<p>
-  <b>Blackberry url:</b>
-  <%= @app.blackberry_url %>
-</p>
-
-<p>
-  <b>Other url:</b>
-  <%= @app.other_url %>
-</p>
-
-
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>

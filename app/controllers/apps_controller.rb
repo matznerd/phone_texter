@@ -1,4 +1,5 @@
 class AppsController < ApplicationController
+  
   # GET /apps
   # GET /apps.json
   def index
@@ -7,6 +8,19 @@ class AppsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @apps }
+    end
+  end
+  
+  def download
+    @app = App.find(params[:id])
+    if request.user_agent =~ /iphone|ipad/
+      redirect_to @app.ios_url
+    elsif request.user_agent =~ /android/
+      redirect_to @app.android_url
+    elsif request.user_agent =~ /blackberry/
+      redirect_to @app.blackberry_url
+    else
+      redirect_to @app.other_url
     end
   end
 
@@ -41,15 +55,10 @@ class AppsController < ApplicationController
   # POST /apps.json
   def create
     @app = App.new(params[:app])
-
-    respond_to do |format|
-      if @app.save
-        format.html { redirect_to @app, notice: 'App was successfully created.' }
-        format.json { render json: @app, status: :created, location: @app }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @app.errors, status: :unprocessable_entity }
-      end
+    if @app.save
+      redirect_to @app, notice: 'Success!'
+    else
+      render action: "new"
     end
   end
 
