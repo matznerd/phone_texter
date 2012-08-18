@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @app.name %>
+</p>
+
+<p>
+  <b>Ios url:</b>
+  <%= @app.ios_url %>
+</p>
+
+<p>
+  <b>Android url:</b>
+  <%= @app.android_url %>
+</p>
+
+<p>
+  <b>Blackberry url:</b>
+  <%= @app.blackberry_url %>
+</p>
+
+<p>
+  <b>Other url:</b>
+  <%= @app.other_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_app_path(@app) %> |
+<%= link_to 'Back', apps_path %>

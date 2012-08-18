@@ -1,0 +1,37 @@
+<%= form_for(@app) do |f| %>
+  <% if @app.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@app.errors.count, "error") %> prohibited this app from being saved:</h2>
+
+      <ul>
+      <% @app.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :ios_url %><br />
+    <%= f.text_field :ios_url %>
+  </div>
+  <div class="field">
+    <%= f.label :android_url %><br />
+    <%= f.text_field :android_url %>
+  </div>
+  <div class="field">
+    <%= f.label :blackberry_url %><br />
+    <%= f.text_field :blackberry_url %>
+  </div>
+  <div class="field">
+    <%= f.label :other_url %><br />
+    <%= f.text_field :other_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
