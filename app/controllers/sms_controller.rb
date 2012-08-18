@@ -7,7 +7,7 @@ class SmsController < ApplicationController
     @client.account.sms.messages.create(
       :from => '+16464900357',
       :to => @number,
-      :body => 'Download the app to stay connected with family & close friends: ' + @download_url
+      :body => 'Download the app to stay connected with family & close friends: ' + @download_url,
     )
     render :confirm
   end

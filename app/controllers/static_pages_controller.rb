@@ -3,6 +3,8 @@ class StaticPagesController < ApplicationController
   end
   
   def download
-    
+  end
+  
+  def demo
   end
 end

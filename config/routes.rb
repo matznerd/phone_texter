@@ -1,5 +1,6 @@
 PhoneTexter::Application.routes.draw do
   match 'twilio' => 'sms#send_sms'
+  match 'phone_texter' => 'form_builder#build'
   
   root :to => 'static_pages#home'
 
