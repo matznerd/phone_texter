@@ -14,11 +14,11 @@ class AppsController < ApplicationController
   def download
     @app = App.find(params[:id])
     
-    if request.user_agent =~ /iphone|ipad/
+    if request.user_agent =~ /iPhone/
       redirect_to @app.ios_url
-    elsif request.user_agent =~ /android/
+    elsif request.user_agent =~ /Android/
       redirect_to @app.android_url
-    elsif request.user_agent =~ /blackberry/
+    elsif request.user_agent =~ /Blackberry/
       redirect_to @app.blackberry_url
     else
       redirect_to @app.other_url
