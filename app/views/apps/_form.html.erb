@@ -1,37 +1,21 @@
+<div class="row">
+	<div class="span6 offset3">
 <%= form_for(@app) do |f| %>
-  <% if @app.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@app.errors.count, "error") %> prohibited this app from being saved:</h2>
+  <%= render 'shared/error_messages' %>
 
-      <ul>
-      <% @app.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, 'Your App Name' %>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :ios_url %><br />
-    <%= f.text_field :ios_url %>
-  </div>
-  <div class="field">
-    <%= f.label :android_url %><br />
-    <%= f.text_field :android_url %>
-  </div>
-  <div class="field">
-    <%= f.label :blackberry_url %><br />
-    <%= f.text_field :blackberry_url %>
-  </div>
-  <div class="field">
-    <%= f.label :other_url %><br />
-    <%= f.text_field :other_url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <%= f.label :other_url, 'Default Mobile URL' %>
+    <%= f.text_field :other_url, :placeholder => 'http://mobilesite.com' %>
+
+    <%= f.label :ios_url, 'URL for iPhone Users' %>
+    <%= f.text_field :ios_url, :placeholder => 'http://itunes.apple.com/us/app/...' %>
+
+    <%= f.label :android_url, 'URL for Android Users' %>
+    <%= f.text_field :android_url, :placeholder => 'https://play.google.com/store/apps/...' %>
+
+    <%= f.submit "Create embed code", class: "btn btn-large btn-primary"%>
 <% end %>
+</div>
+</div>
