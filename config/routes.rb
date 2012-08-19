@@ -8,6 +8,7 @@ PhoneTexter::Application.routes.draw do
   match 'sms' => 'sms#send_sms'
   match 'phone_texter' => 'form_builder#build'
   match 'demo' => 'static_pages#demo'
+  match 'demo_without' => 'static_pages#demo_without'
   
   root :to => 'apps#new'
 
